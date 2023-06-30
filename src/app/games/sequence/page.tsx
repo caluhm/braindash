@@ -265,7 +265,7 @@ export default  function Sequence() {
         <div className='flex flex-col justify-center items-center min-h-[calc(100vh-5rem-540px)] px-4 sm:py-0 py-6'>
           <h3 className='sm:text-4xl text-2xl font-bold text-center pb-6'>Personal Best: Level {bestScore}</h3>
           <h4 className='sm:text-2xl text-lg font-semibold text-center pb-2'>Previous Scores</h4>
-          <div className='max-h-[calc(100vh-5rem-700px)] min-h-[3.25rem] overflow-y-auto py-3 px-8 bg-[#d1d3dd] rounded'>
+          <div className='max-h-[calc(100vh-5rem-500px)] min-h-[3.25rem] overflow-y-auto py-3 px-8 bg-[#d1d3dd] rounded'>
           {!(scores.length === 0) ? (
             <ul>
               {scores.map((score, index) => (

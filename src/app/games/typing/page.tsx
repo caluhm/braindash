@@ -196,11 +196,11 @@ export default function Typing() {
             <>
             <div>
               {!isGameActive ? (
-              <h2 className='text-6xl font-bold pb-6 text-center'>Typing Test</h2>
+              <h2 className='sm:text-6xl text-4xl font-bold pb-6 text-center'>Typing Test</h2>
               ) : (
-              <h2 className='text-6xl font-bold pb-6 text-center'>{wpm}</h2>
+              <h2 className='sm:text-6xl text-4xl font-bold pb-6 text-center'>{wpm}</h2>
               )}
-              <p className='text-xl font-medium text-center max-w-xl'>How many words per minute an you type?</p>
+              <p className='sm:text-xl text-base font-medium text-center max-w-xl'>How many words per minute an you type?</p>
             </div>
             <div
               className={`max-w-[900px] bg-blue-200 focus:bg-blue-100 rounded-md cursor-pointer transition-colors ease-in-out duration-200 focus:ring-0 ${
@@ -240,14 +240,14 @@ export default function Typing() {
             {!isGameActive ? (
               <span className='text-base font-normal'>Start typing to begin.</span>
               ) : (
-              <span className='text-4xl font-bold'>{formatTime(timeTaken)}</span>
+              <span className='sm:text-4xl text-2xl font-bold'>{formatTime(timeTaken)}</span>
               )
             } 
             </>
             ) : (
               <>
-                <h2 className='text-6xl font-bold pb-6 text-center'>{wpm}wpm</h2>
-                <p className='text-xl font-medium text-center max-w-xl'>Good effort, want to try again and get a better score?</p>
+                <h2 className='sm:text-6xl text-4xl font-bold pb-6 text-center'>{wpm}wpm</h2>
+                <p className='sm:text-xl text-base font-medium text-center max-w-xl'>Good effort, want to try again and get a better score?</p>
                 <div className='flex flex-row justify-center items-center mt-6 gap-3 text-gray-950'>
                   <button
                     id="save-score"
@@ -267,9 +267,9 @@ export default function Typing() {
           </div>
         </div>
         <div className='flex flex-col justify-center items-center min-h-[calc(100vh-5rem-540px)] px-4 sm:py-0 py-6'>
-          <h3 className='text-4xl font-bold text-center pb-6'>Personal Best: {bestWPM}wpm</h3>
-          <h4 className='text-2xl font-semibold text-center pb-2'>Previous Times</h4>
-          <div className='max-h-[calc(100vh-5rem-700px)] min-h-[3.25rem] overflow-y-auto py-3 px-8 bg-[#d1d3dd] rounded'>
+          <h3 className='sm:text-4xl text-2xl font-bold text-center pb-6'>Personal Best: {bestWPM}wpm</h3>
+          <h4 className='sm:text-2xl font-semibold text-center pb-2'>Previous Times</h4>
+          <div className='max-h-[calc(100vh-5rem-500px)] min-h-[3.25rem] overflow-y-auto py-3 px-8 bg-[#d1d3dd] rounded'>
             {!(scores.length === 0) ? (
             <ul>
               {scores.map((score, index) => (
