@@ -203,7 +203,7 @@ export default function Typing() {
               <p className='sm:text-xl text-base font-medium text-center max-w-xl'>How many words per minute an you type?</p>
             </div>
             <div
-              className={`max-w-[900px] bg-blue-200 focus:bg-blue-100 rounded-md cursor-pointer transition-colors ease-in-out duration-200 focus:ring-0 ${
+              className={`max-w-[900px] md:bg-blue-200 md:focus:bg-blue-100 bg-red-400 rounded-md cursor-pointer transition-colors ease-in-out duration-200 focus:ring-0 ${
                 isContainerFocused ? 'container-focused' : ''
               } outline-none`}
               tabIndex={isGameComplete ? -1 : 0}
@@ -212,7 +212,7 @@ export default function Typing() {
               onFocus={() => setIsContainerFocused(true)}
               onBlur={() => setIsContainerFocused(false)}
             >
-            <div className='text-center p-5 text-lg w-full h-full'>
+            <div className='md:block hidden text-center p-5 text-lg w-full h-full'>
               {paragraph.split('').map((character, index) => {
                 const isCurrent = index === currentIndex;
                 const isCorrect = typedText[index] === character;
@@ -236,9 +236,12 @@ export default function Typing() {
                   );
                 })}
               </div>
+              <div className='md:hidden block text-center p-5 text-lg w-full h-full text-white'>
+                <p>This game is only suitable for desktop devices. Please try to access again from a suitable device.</p>
+              </div>
             </div>
             {!isGameActive ? (
-              <span className='text-base font-normal'>Start typing to begin.</span>
+              <span className='md:block hidden text-base font-normal'>Start typing to begin.</span>
               ) : (
               <span className='sm:text-4xl text-2xl font-bold'>{formatTime(timeTaken)}</span>
               )
